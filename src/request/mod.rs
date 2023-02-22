@@ -2,7 +2,7 @@ use crate::query::types::BssidPayload;
 use reqwest::Client;
 use serde_json::json;
 
-pub async fn make_request(hostname: &String, url: &str, payload: BssidPayload, client: &Client) -> anyhow::Result<()> {
+pub async fn make_request(hostname: &String, url: &str, payload: Vec<BssidPayload>, client: &Client) -> anyhow::Result<()> {
     // simply make a post request with the json body
     match client.post(url)
         .body(json!(payload).to_string())

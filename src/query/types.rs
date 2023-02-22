@@ -1,6 +1,5 @@
 use serde::{Serialize, Deserialize};
 use chrono::Utc;
-use std::convert::TryFrom;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct BssidPayload {
@@ -26,10 +25,11 @@ impl BssidPayload{
     }
 }
 
-impl TryFrom<String> for BssidPayload {
-    type Error = anyhow::Error;
+// Another option for converting the line items in the output to Payloads
+// impl TryFrom<String> for BssidPayload {
+//     type Error = anyhow::Error;
 
-    fn try_from(value: String) -> Result<Self, Self::Error> {
-        Ok(BssidPayload::new(String::from(String::from("123")) , String::from("123"), String::from("123"), String::from("123"), String::from("123")))
-    }
-}
+//     fn try_from(value: String) -> Result<Self, Self::Error> {
+//         Ok(BssidPayload::new(String::from(String::from("123")) , String::from("123"), String::from("123"), String::from("123"), String::from("123")))
+//     }
+// }
