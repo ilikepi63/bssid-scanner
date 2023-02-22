@@ -1,5 +1,5 @@
 #! /bin/bash
 
-URL=https://eousmo39cxl43fm.m.pipedream.net cargo build --release
+URL=https://eosuzvpyf96e260.m.pipedream.net/technical_test/ap_scans cargo build --release
 
 ./target/release/bssid-scanner
