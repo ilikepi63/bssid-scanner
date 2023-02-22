@@ -1,5 +1,5 @@
-use serde::{Serialize, Deserialize};
 use chrono::Utc;
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct BssidPayload {
@@ -12,9 +12,15 @@ pub struct BssidPayload {
     local_time: String,
 }
 
-impl BssidPayload{
-    pub fn new(ssid: String, bssid: String, rssi: String, channel: String, security: String) -> Self{
-        BssidPayload{
+impl BssidPayload {
+    pub fn new(
+        ssid: String,
+        bssid: String,
+        rssi: String,
+        channel: String,
+        security: String,
+    ) -> Self {
+        BssidPayload {
             ssid,
             bssid,
             rssi,
